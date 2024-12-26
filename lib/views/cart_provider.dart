@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:laptop_store/views/bottom_bar.dart';
 import 'package:laptop_store/views/check_out/add_information_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -101,7 +102,12 @@ class CartProvider with ChangeNotifier {
 // cart_page.dart
 
 class CartPage extends StatelessWidget {
-  const CartPage({super.key});
+  final bool isFromBottomBar;
+  
+  const CartPage({
+    super.key, 
+    this.isFromBottomBar = false
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +116,19 @@ class CartPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        
+        leading: IconButton(
+          onPressed: () {
+            if (isFromBottomBar) {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => const BottomBar()),
+              );
+            } else {
+              Navigator.pop(context);
+            }
+          }, 
+          icon: const Icon(Icons.arrow_back)
+        ),
         title: const Text("Cart"),
       ),
       body: Column(

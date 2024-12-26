@@ -394,7 +394,7 @@ class _LaptopSalesPageState extends State<LaptopSalesPage> {
             child: TextField(
               controller: searchController,
               decoration: InputDecoration(
-                hintText: 'Search laptops...',
+                hintText: 'Search',
                 prefixIcon: const Icon(Icons.search, color: Color(0xff0077B6)),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),

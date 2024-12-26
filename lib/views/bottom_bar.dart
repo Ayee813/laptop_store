@@ -36,12 +36,11 @@ class _BottomBarState extends State<BottomBar> {
               isLabelVisible: cart.itemCount > 0,
               child: IconButton(
                 onPressed: () {
-                  setState(() {
-                    _currentIndex = 4;
-                  });
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const CartPage()),
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const CartPage(isFromBottomBar: true)),
                   );
                 },
                 icon: const Icon(Icons.shopping_cart, color: Colors.white),

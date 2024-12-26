@@ -421,7 +421,7 @@ class _ProductsManagementPageState extends State<ProductsManagementPage> {
                               Image.asset(
                                 product.image,
                                 width: double.infinity,
-                                fit: BoxFit.cover,
+                                height: 200,
                               ),
                               Positioned(
                                 top: 8,

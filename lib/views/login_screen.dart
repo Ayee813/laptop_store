@@ -110,6 +110,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             controller: _passwordController,
                             obscureText: !_passWordShow,
                             decoration: InputDecoration(
+                              hintText: 'Password',
                               // Removed the hintText property
                               filled: true,
                               fillColor: Colors.grey[100],

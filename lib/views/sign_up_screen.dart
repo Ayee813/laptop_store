@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:laptop_store/services/auth_service.dart';
+import 'package:laptop_store/views/login_screen.dart';
 import 'package:provider/provider.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -23,6 +24,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     super.dispose();
   }
 
+  bool _passWordShow = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,7 +107,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           const SizedBox(height: 16),
                           TextFormField(
                             controller: _passwordController,
-                            obscureText: true,
+                            obscureText: !_passWordShow, // Add this
                             decoration: InputDecoration(
                               hintText: 'Password',
                               filled: true,
@@ -115,6 +117,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 borderSide: BorderSide.none,
                               ),
                               prefixIcon: const Icon(Icons.lock_outline),
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  _passWordShow
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                  color: Colors.grey,
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    _passWordShow = !_passWordShow;
+                                  });
+                                },
+                              ),
                             ),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -129,7 +144,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           const SizedBox(height: 16),
                           TextFormField(
                             controller: _confirmPasswordController,
-                            obscureText: true,
+                            obscureText: !_passWordShow, // Add this
                             decoration: InputDecoration(
                               hintText: 'Confirm Password',
                               filled: true,
@@ -139,6 +154,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 borderSide: BorderSide.none,
                               ),
                               prefixIcon: const Icon(Icons.lock_outline),
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  _passWordShow
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                  color: Colors.grey,
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    _passWordShow = !_passWordShow;
+                                  });
+                                },
+                              ),
                             ),
                             validator: (value) {
                               if (value == null || value.isEmpty) {
@@ -165,16 +193,35 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                             const SnackBar(
                                               content: Text(
                                                   'Account created successfully!'),
+                                              backgroundColor: Colors.green,
+                                              duration: Duration(seconds: 2),
                                             ),
                                           );
                                           _emailController.clear();
                                           _passwordController.clear();
                                           _confirmPasswordController.clear();
+
+                                          // Navigate to login screen after short delay
+                                          Future.delayed(
+                                              const Duration(seconds: 2), () {
+                                            Navigator.pushReplacement(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const LoginScreen(),
+                                              ),
+                                            );
+                                          });
                                         },
                                         onError: (err) {
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
-                                            SnackBar(content: Text(err)),
+                                            SnackBar(
+                                              content: Text(err),
+                                              backgroundColor: Colors.red,
+                                              duration:
+                                                  const Duration(seconds: 3),
+                                            ),
                                           );
                                         },
                                       );

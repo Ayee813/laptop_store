@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:laptop_store/screens/account_screen.dart';
 import 'package:laptop_store/views/cart_provider.dart';
 import 'package:laptop_store/views/check_out/add_information_screen.dart';
 import 'package:intl/intl.dart';
@@ -37,6 +38,32 @@ class ProductDetailPage extends StatelessWidget {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
         ),
+         actions: [
+          Consumer<CartProvider>(
+            builder: (ctx, cart, child) => Badge(
+              label: Text(cart.itemCount.toString()),
+              isLabelVisible: cart.itemCount > 0,
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => CartPage()),
+                  );
+                },
+                icon: const Icon(Icons.shopping_cart, color: Colors.white),
+              ),
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AccountPage()),
+              );
+            },
+            icon: const Icon(Icons.account_circle, color: Colors.white),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -389,7 +416,7 @@ class _LaptopSalesPageState extends State<LaptopSalesPage> {
             child: TextField(
               controller: searchController,
               decoration: InputDecoration(
-                hintText: 'Search laptops...',
+                hintText: 'Search',
                 prefixIcon: const Icon(Icons.search, color: Color(0xff0077B6)),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),

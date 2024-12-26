@@ -10,12 +10,75 @@ class OrderScreen extends StatefulWidget {
 class _OrderState extends State<OrderScreen> {
   final List<Map<String, dynamic>> orders = [
     {
-      'id': '1001',
-      'customer': 'John Doe',
-      'date': '2024-03-15',
-      'status': 'Pending',
-      'total': '\$999.99',
-    },
+    'id': '1001',
+    'customer': 'John Doe',
+    'date': '2024-03-15',
+    'status': 'Pending',
+    'total': '9,999,000 KIP',
+  },
+  {
+    'id': '1002',
+    'customer': 'Sarah Wilson',
+    'date': '2024-03-16',
+    'status': 'Completed',
+    'total': '5,500,000 KIP',
+  },
+  {
+    'id': '1003',
+    'customer': 'Michael Chen',
+    'date': '2024-03-16',
+    'status': 'Processing',
+    'total': '12,750,000 KIP',
+  },
+  {
+    'id': '1004',
+    'customer': 'Emily Rodriguez',
+    'date': '2024-03-17',
+    'status': 'Delivered',
+    'total': '3,200,000 KIP',
+  },
+  {
+    'id': '1005',
+    'customer': 'James Kumar',
+    'date': '2024-03-17',
+    'status': 'Pending',
+    'total': '8,900,000 KIP',
+  },
+  {
+    'id': '1006',
+    'customer': 'Lisa Thompson',
+    'date': '2024-03-18',
+    'status': 'Cancelled',
+    'total': '4,500,000 KIP',
+  },
+  {
+    'id': '1007',
+    'customer': 'David Park',
+    'date': '2024-03-18',
+    'status': 'Processing',
+    'total': '15,800,000 KIP',
+  },
+  {
+    'id': '1008',
+    'customer': 'Anna Martinez',
+    'date': '2024-03-19',
+    'status': 'Completed',
+    'total': '6,700,000 KIP',
+  },
+  {
+    'id': '1009',
+    'customer': 'Robert Singh',
+    'date': '2024-03-19',
+    'status': 'Delivered',
+    'total': '11,300,000 KIP',
+  },
+  {
+    'id': '1010',
+    'customer': 'Michelle Lee',
+    'date': '2024-03-20',
+    'status': 'Pending',
+    'total': '7,800,000 KIP',
+  }
     // Add more sample orders as needed
   ];
 
