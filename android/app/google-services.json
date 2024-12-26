@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "14689281100",
+    "project_id": "laptop-store-bb668",
+    "storage_bucket": "laptop-store-bb668.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14689281100:android:7bdb060f3277dd417640e9",
+        "android_client_info": {
+          "package_name": "com.example.flutter_"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWS1BjY5UQ_HwmYa00DQUmx577jgyM7Cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14689281100:android:105c4fa14d0446867640e9",
+        "android_client_info": {
+          "package_name": "com.example.laptop_store"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWS1BjY5UQ_HwmYa00DQUmx577jgyM7Cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
