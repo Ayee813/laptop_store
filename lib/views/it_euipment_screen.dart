@@ -229,7 +229,7 @@ class ProductDetailPage extends StatelessWidget {
                                 child: Image.asset(
                                   otherLaptop.image,
                                   width: double.infinity,
-                                  fit: BoxFit.cover,
+                                  height: 450,
                                 ),
                               ),
                               Padding(
@@ -466,7 +466,7 @@ class _LaptopSalesPageState extends State<LaptopSalesPage> {
                               Image.asset(
                                 laptop.image,
                                 width: double.infinity,
-                                fit: BoxFit.cover,
+                                height: 400,
                               ),
                               Positioned.fill(
                                 child: Container(
